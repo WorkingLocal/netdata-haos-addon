@@ -1,0 +1,27 @@
+name: "Netdata Agent"
+description: "Real-time performance monitoring. Streams CPU, RAM, disk and UPS metrics to a self-hosted Netdata parent."
+version: "1.0.0"
+slug: "netdata_agent"
+init: false
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+host_network: true
+host_pid: true
+privileged: true
+ports:
+  19999/tcp: 19999
+ports_description:
+  19999/tcp: "Netdata local dashboard"
+options:
+  hostname: "haos"
+  streaming_enabled: false
+  parent_url: ""
+  api_key: ""
+schema:
+  hostname: str
+  streaming_enabled: bool
+  parent_url: str
+  api_key: str
