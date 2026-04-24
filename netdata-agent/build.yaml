@@ -1,0 +1,4 @@
+build_from:
+  amd64: netdata/netdata:latest
+  aarch64: netdata/netdata:latest
+squash: false
